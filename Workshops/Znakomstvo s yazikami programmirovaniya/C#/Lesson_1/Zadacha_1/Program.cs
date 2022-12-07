@@ -1,5 +1,4 @@
-﻿
-Console.WriteLine("Введите число 1");
+﻿Console.WriteLine("Введите число 1");
 string input0 = Console.ReadLine() ?? "";
 Console.WriteLine("Введите число 2");
 string input1 = Console.ReadLine() ?? "";
