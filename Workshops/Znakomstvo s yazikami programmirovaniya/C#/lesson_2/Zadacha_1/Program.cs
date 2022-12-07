@@ -5,21 +5,23 @@ int GetRandomNumber()
     return new Random().Next(100, 1000); // 100 ... 999
 }
 
-void ShowRandomNumber(int number)
+/*void ShowRandomNumber(int number)
 {
     Console.WriteLine($"Случайное трехзначное число: {number}");
     string str = number.ToString();
-    Console.WriteLine($"= {str[0]}{str[2]}");
+    Console.WriteLine($" = {str[0]}{str[2]}");
 }
-
-ShowRandomNumber(GetRandomNumber());
+*/
 
 void ShowRandomNumberSecond(int number)
 {
-    int result = number / 10 + number % 10;    
+    int result = (number / 100) * 10 + number % 10;
+    Console.WriteLine($"Случайное трехзначное число: {number}");
+    Console.WriteLine(result);
+    return;    
 }
 
-Console.WriteLine(int result);
+ShowRandomNumberSecond(GetRandomNumber());
 
 /*
 int GetRandomNumber(int left, int right)
