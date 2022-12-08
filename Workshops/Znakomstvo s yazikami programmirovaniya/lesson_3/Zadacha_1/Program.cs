@@ -6,20 +6,15 @@ string Method(int quarter)
     {
         case 1:
             return "x = [0; + inf], y = [0; + inf]";
-            break;
         case 2:
             return "x = [0; - inf], y = [0; + inf]";
-            break;
         case 3:
             return "x = [0; - inf], y = [0; - inf]";
-            break;
         case 4:
             return "x = [0; + inf], y = [0; - inf]";
-            break;        
-        break;
         default:
             return "Нужно ввести число от 1 до 4";
     }
 }
-Console.ReadLine();
-Console.WriteLine(Method);
+int number = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(Method(number));
