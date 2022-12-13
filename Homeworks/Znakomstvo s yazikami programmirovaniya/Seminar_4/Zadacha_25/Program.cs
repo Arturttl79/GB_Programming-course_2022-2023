@@ -4,6 +4,8 @@
 
 * 2, 4 -> 16 */
 
+using System.Globalization;
+
 int GetNumber(string message)
 {
     int result = 0;
