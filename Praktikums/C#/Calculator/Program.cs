@@ -34,30 +34,3 @@ else
     System.Console.WriteLine("Vveli nepravilnoe chislo");
 Console.ReadLine();
 }
-
-
-
-/* switch (consoleKey)
-{
-    case ConsoleKey.Multiply:
-        Console.WriteLine("Multiply");
-        break;
-
-    case ConsoleKey.Add:
-        Console.WriteLine("Add");
-        break;
-
-    case ConsoleKey.Subtract:
-        Console.WriteLine("Subtract");
-        break;
-
-    case ConsoleKey.Divide:
-        Console.WriteLine("Divide");
-        break;
-    
-    default:
-        Console.WriteLine("Mistake");
-        break;
-
-}
-*/
