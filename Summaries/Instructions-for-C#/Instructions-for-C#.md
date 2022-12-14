@@ -87,6 +87,26 @@ int Max(int arg1, int arg2, int arg3)
     return result;
 }
 ```
+
+```
+Кортеж - когда в одну функцию можно добавить несколько аргументов. Пример:
+
+(int, int) GetSumms(int[] array)
+{
+    int positiveSumm = 0;
+    int negativeSumm = 0;
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        if(array[i] < 0)
+            negativeSumm += array[i];
+        else
+            positiveSumm += array[i];
+    }
+    return (positiveSumm, negativeSumm);
+}
+```
+
 ```
 Метод для задания считывания определенного знака в числах с дробями:
 
