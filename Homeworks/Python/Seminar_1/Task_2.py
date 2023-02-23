@@ -8,7 +8,7 @@ number = int(input('Vvedite trehznachnoe chislo: '))
 summ = 0
 
 while number >= 10:
-    summ += number%10
+    summ += number % 10
     number = number // 10
 else:
     summ += number
