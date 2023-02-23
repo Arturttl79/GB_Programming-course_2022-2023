@@ -3,3 +3,11 @@
 # Для этого Петя делает две подсказки. Он называет сумму этих чисел S и их произведение P. 
 # Помогите Кате отгадать задуманные Петей числа.
 
+summ = int(input('Vvedite summu chisel: '))
+multiply = int(input('Vvedite proizvedenie chisel: '))
+
+discriminant = summ ** 2 - 4 * multiply
+x = (summ + discriminant ** (1 / 2)) // 2
+y = summ - x
+
+print(f'x = {x}, y = {y}')
