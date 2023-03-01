@@ -24,7 +24,7 @@ name = list(input('Vvedite imya: '))
 summ = 0
 
 for i in range(len(name)):
-    name[i] = str.capitalize(name[i])
+    name[i] = name[i].capitalize()
     for item in letters:
         for key in item:
             if key == name[i]:
