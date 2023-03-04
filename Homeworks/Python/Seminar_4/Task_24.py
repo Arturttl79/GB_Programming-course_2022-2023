@@ -14,7 +14,7 @@ n = int(input('Vvedite kol-vo kustov: '))
 gryadka = [random.randrange(100) for i in range (n)]
 max_yagod = 0
 
-for i in range(len(gryadka)):
-    if max_yagod < (gryadka[i - 2] + gryadka[i - 1] + gryadka [i]):
-        max_yagod = gryadka[i - 2] + gryadka[i - 1] + gryadka [i]
+for i in range(n):
+    if max_yagod < (summ := gryadka[i - 2] + gryadka[i - 1] + gryadka [i]):
+        max_yagod = summ
 print(gryadka, max_yagod)
