@@ -10,8 +10,8 @@ b = int(input('Vvedite stepen`: '))
 
 
 def exponent(a, b):
-    if b == 1:
-        return a
+    if b == 0:
+        return 1
     return a * exponent(a, b-1)
 
 
