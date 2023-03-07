@@ -11,6 +11,7 @@
 # 1 5 1 5 1
 # Вывод:
 # 2
+
 from random import randrange
 
 lst = [randrange(-100, 100) for _ in range(int(input('Vvedite razmernost` massiva: ')))]

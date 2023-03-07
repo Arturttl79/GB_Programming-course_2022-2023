@@ -23,6 +23,17 @@ def compare_pairs(list):
                     break
     return count
 
+def func(lst: list) -> int:
+    el, *lst = lst  # el = lst[0], lst = [1:]
+    if lst:
+        return func(lst) + lst.count(el)
+
+    return 0
+
+
+if __name__ == '__main__':
+    print(func([1, 2, 3, 2, 3]))
+
     
 # V sluchaye, kogda para, esli sovpala, to ee chisla po otdel`nosti povtorno rassmatrivayutsya:
 """

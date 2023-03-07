@@ -7,7 +7,7 @@
 def foo(n):
     if n == 0:
         return ''
-    temp = foo(n - 1)
-    return input() + temp
+    temp = input()
+    return foo(n - 1) + temp
 
 print(foo(int(input('Vvedite chislo: '))))
