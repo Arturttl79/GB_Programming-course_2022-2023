@@ -1,0 +1,22 @@
+body {
+    background-image: url("https://jooinn.com/images/ocean-view-10.jpg");
+    background-size: 1350px;
+    background-repeat: no-repeat;
+    background-position: top;
+    font-family: 'Crimson Pro', serif;
+    font-size: 20px;
+}
+h1, p {
+    color: #821212;
+}
+h2 {
+    color: #c2cb25;
+}
+img {
+    size: 500px;
+    width: 400px;
+}
+.content {
+    max-width: 400px;
+    margin: auto;
+}
