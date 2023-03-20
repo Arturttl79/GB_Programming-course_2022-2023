@@ -10,24 +10,28 @@
 # **Вывод:
 # ** Парам пам-пам
 
-vowel_letters = ['А', 'Е', 'Ё', 'И', 'О', 'У', 'Ы', 'Э', 'Ю', 'Я']
-rhyme = input("Vvedite stih: ").upper().split()
-
-
-# Выдает список с количеством гласных в каждой фразе
-def count_vowels_in_rhyme(stih, vowels):
-    result = list()
-    for i in stih:
-        lst = list(i)
-        count = 0
-        for j in lst:
-            if j in vowels:
-                count += 1
-        result.append(count)
-    return result
-
-
-if len(set(count_vowels_in_rhyme(rhyme, vowel_letters))) == 1:
+vowel_letters = 'АЕЁИОУЫЭЮЯ'
+    # Проверка на то, чтобы фраз было больше одного              сумма всех гласных букв в каждой фразе
+if len(rhyme := input("Vvedite stih: ").upper().split()) > 1 and len(set([sum(i.count(vowel) for vowel in vowel_letters) for i in rhyme])) == 1:
     print('Парам пам-пам')
 else:
     print('Пам парам')
+
+
+# Выдает список с количеством гласных в каждой фразе
+#  def count_vowels_in_rhyme(stih, vowels):
+#      result = list()
+#      for i in stih:
+#          lst = list(i)
+#          count = 0
+#          for j in lst:
+#              if j in vowels:
+#                  count += 1
+#          result.append(count)
+#      return result
+
+
+#  if len(set(count_vowels_in_rhyme(rhyme, vowel_letters))) == 1:
+#      print('Парам пам-пам')
+#  else:
+#      print('Пам парам')
