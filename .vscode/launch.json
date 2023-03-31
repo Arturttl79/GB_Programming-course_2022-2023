@@ -3,6 +3,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Task_5",
+            "request": "launch",
+            "mainClass": "Workshops.Znakomstvo_s_yazikami_programmirovaniya.JAVA.Lesson_3.Task_5",
+            "projectName": "GB_Programming-course_2022-2023_66b1c8a6"
+        },
+        {
+            "type": "java",
+            "name": "Task_4",
+            "request": "launch",
+            "mainClass": "Workshops.Znakomstvo_s_yazikami_programmirovaniya.JAVA.Lesson_3.Task_4",
+            "projectName": "GB_Programming-course_2022-2023_66b1c8a6"
+        },
+        {
+            "type": "java",
+            "name": "Task_3",
+            "request": "launch",
+            "mainClass": "Workshops.Znakomstvo_s_yazikami_programmirovaniya.JAVA.Lesson_3.Task_3",
+            "projectName": "GB_Programming-course_2022-2023_66b1c8a6"
+        },
+        {
+            "type": "java",
+            "name": "Task_2",
+            "request": "launch",
+            "mainClass": "Workshops.Znakomstvo_s_yazikami_programmirovaniya.JAVA.Lesson_3.Task_2",
+            "projectName": "GB_Programming-course_2022-2023_66b1c8a6"
+        },
+        {
+            "type": "java",
+            "name": "Task_3",
+            "request": "launch",
+            "mainClass": "Homeworks.JAVA.Seminar_2.Task_3",
+            "projectName": "GB_Programming-course_2022-2023_66b1c8a6"
+        },
+        {
+            "type": "java",
             "name": "Task_4",
             "request": "launch",
             "mainClass": "Homeworks.JAVA.Seminar_2.Task_4",
