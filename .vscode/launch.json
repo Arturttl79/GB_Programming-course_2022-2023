@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "HW_6",
+            "request": "launch",
+            "mainClass": "Homeworks.JAVA.Seminar_6.HW_6",
+            "projectName": "GB_Programming-course_2022-2023_66b1c8a6"
+        },
+        {
+            "type": "java",
+            "name": "Task_2",
+            "request": "launch",
+            "mainClass": "Workshops.Znakomstvo_s_yazikami_programmirovaniya.JAVA.Lesson_6.Task_2",
+            "projectName": "GB_Programming-course_2022-2023_66b1c8a6"
+        },
+        {
+            "type": "java",
             "name": "Task_3",
             "request": "launch",
             "mainClass": "Homeworks.JAVA.Seminar_5.Task_3",
