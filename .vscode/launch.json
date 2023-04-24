@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "GB_Programming-course_2022-2023_66b1c8a6"
+        },
+        {
+            "type": "java",
             "name": "HW_6",
             "request": "launch",
             "mainClass": "Homeworks.JAVA.Seminar_6.HW_6",
