@@ -3,33 +3,43 @@ package StudentDomain;
 public class Teacher extends User {
     
     private String subject;
-    private long teacherID;
+    private int teacherId;
+    private String academicDegree;
 
-    public Teacher(String fName, String lName, int age, String subject, long ID) {
+    public Teacher(String fName, String lName, int age, String subject, int teacherId, String academicDegree) {
         super(fName, lName, age);
         this.subject = subject;
-        this.teacherID = ID;
+        this.teacherId = teacherId;
+        this.academicDegree = academicDegree;
     }
 
     public String getSubject() {
         return subject;
     }
 
-    public long getTeacherID() {
-        return teacherID;
+    public int getTeacherId() {
+        return teacherId;
     }
 
+    public String getAcademicDegree() {
+        return academicDegree;
+    }
+    
     public void setSubject(String subject) {
         this.subject = subject;
     }
 
-    public void setTeacherID(long teacherID) {
-        this.teacherID = teacherID;
+    public void setTeacherId(int teacherId) {
+        this.teacherId = teacherId;
     }
 
+    public void setAcademicDegree(String academicDegree) {
+        this.academicDegree = academicDegree;
+    }  
+    
     @Override
     public String toString() {
         return "Teacher (firstName = " + super.getFirstName() + ", lastName = " + super.getLastName() + 
-        ", age = " + super.getAge() + ", subject = " + subject + ", teacherID = " + teacherID + ")";
-    }   
+        ", age = " + super.getAge() + ", subject = " + subject + ", teacherID = " + teacherId + ")";
+    } 
 }
