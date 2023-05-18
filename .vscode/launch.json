@@ -5,6 +5,20 @@
             "type": "java",
             "name": "App",
             "request": "launch",
+            "mainClass": "Workshops.Znakomstvo_s_yazikami_programmirovaniya.JAVA.OOP.Seminar_5.GenericInheritance.src.App",
+            "projectName": "GB_Programming-course_2022-2023_66b1c8a6"
+        },
+        {
+            "type": "java",
+            "name": "Zadanie_1",
+            "request": "launch",
+            "mainClass": "Lectures.JAVA.OOP.Zadanie_1",
+            "projectName": "GB_Programming-course_2022-2023_66b1c8a6"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
             "mainClass": "App",
             "projectName": "GB_Programming-course_2022-2023_66b1c8a6"
         },
