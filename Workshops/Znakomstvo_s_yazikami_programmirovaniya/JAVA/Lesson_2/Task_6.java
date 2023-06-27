@@ -28,7 +28,7 @@ public class Task_6 {
         try (FileWriter fw = new FileWriter("Workshops/Znakomstvo_s_yazikami_programmirovaniya/JAVA/Lesson_2/result.txt", true)) {
             fw.write(String.valueOf(number) + '\n');
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());// TODO: handle exception
+            System.out.println(ex.getMessage());
         }
         BufferedReader br = new BufferedReader(new FileReader("Workshops/Znakomstvo_s_yazikami_programmirovaniya/JAVA/Lesson_2/result.txt"));
         String str;

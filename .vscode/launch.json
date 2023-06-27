@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "calculator.Main",
+            "projectName": "GB_Programming-course_2022-2023_66b1c8a6"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "GB_Programming-course_2022-2023_66b1c8a6"
+        },
+        {
+            "type": "java",
             "name": "App",
             "request": "launch",
             "mainClass": "Workshops.Znakomstvo_s_yazikami_programmirovaniya.JAVA.OOP.Seminar_5.GenericInheritance.src.App",

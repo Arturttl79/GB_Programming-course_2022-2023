@@ -21,7 +21,7 @@ public class Task_3 {
             fw.write(String.valueOf(number) + '\n');
             fw.close();
         } catch (Exception e) {
-            e.printStackTrace(); // TODO: handle exception
+            e.printStackTrace();
             log.info(e.getMessage());
             // fw.append(ex.getMessage());
         }
