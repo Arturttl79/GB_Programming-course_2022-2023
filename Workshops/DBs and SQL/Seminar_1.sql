@@ -3,7 +3,7 @@ CREATE DATABASE works;
 USE works;
 
 CREATE TABLE workers
-(id INT PRIMARY KEY NOT NULL, 
+(id INT PRIMARY KEY NOT NULL,
 name_worker VARCHAR(30) NOT NULL,
 dept VARCHAR(30) NOT NULL,
 salary INT);
@@ -23,7 +23,16 @@ SELECT * FROM workers
 WHERE salary > 6000;
 
 SELECT * FROM workers
-WHERE dept = "IT";
+WHERE dept = 'IT';
 
 SELECT * FROM workers
-WHERE NOT dept LIKE "IT";
+WHERE dept <> 'IT';
+
+SELECT * FROM workers
+WHERE dept != 'IT';
+
+SELECT * FROM workers
+WHERE dept NOT LIKE 'IT';
+
+SELECT * FROM workers
+WHERE NOT dept LIKE 'IT';

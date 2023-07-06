@@ -37,42 +37,68 @@ VALUES
     ("Знакомство с веб-технологиями",2),
     ("Знакомство с языками программирования",3),
     ("Базы данных и SQL",4);
-    
-    SELECT t.surname, l.course
-    FROM lesson l
-    RIGHT JOIN teacher t
-    ON t.id=l.teacher_id;
-    
-    SELECT t.surname, l.course
-    FROM teacher AS t
-    LEFT JOIN lesson l
-    ON t.id=l.teacher_id
-    WHERE l.course IS NULL;
-    
-    SELECT id, surname FROM teacher
-    WHERE surname = "Питошин";
-    
-    SELECT l.*, web_teacher.*
-    FROM lesson l
-    JOIN (SELECT id, surname FROM teacher
-    WHERE surname = "Питошин") AS web_teacher
-    ON web_teacher.id = l.teacher_id;
-    
-    SELECT * FROM teacher
-    WHERE id IN(1,3);
-    
-	SELECT * FROM teacher
-    WHERE EXISTS(SELECT * FROM lesson
-    WHERE teacher.id = lesson.teacher_id);
-    
-    SELECT * FROM teacher
-    WHERE NOT EXISTS(SELECT * FROM lesson
-    WHERE teacher.id = lesson.teacher_id);
-    
-/* Получить информацию по учителям , которые ведут курс "Знакомство с веб-технологиями"
-С помощью фильтра “WHERE”
-С помощью подзапроса (выборка с помощью с SELECT-a)
-*/
+
+
+-- Получим имена преподавателей которые ведут курсы 
+
+SELECT teacher.surname, lesson.course
+FROM teacher
+JOIN lesson -- INNER JOIN = JOIN 
+ON teacher.id = lesson.teacher_id;
+
+SELECT * 
+FROM teacher, lesson 
+WHERE teacher.id = lesson.teacher_id;
+
+SELECT * FROM teacher
+WHERE EXISTS (SELECT * FROM lesson 
+WHERE teacher.id = lesson.teacher_id);
+
+-- Получим всех преподавателей
+
+SELECT t.surname, l.course
+FROM teacher AS t 
+LEFT JOIN lesson l
+ON t.id=l.teacher_id; 
+
+
+SELECT t.surname, l.course
+FROM lesson l
+RIGHT JOIN teacher t
+ON t.id=l.teacher_id; 
+
+-- Получим фамилии учителей, которые ничего не ведут 
+
+
+SELECT t.surname, l.course
+FROM teacher AS t 
+LEFT JOIN lesson l
+ON t.id=l.teacher_id
+WHERE l.course IS NULL;
+
+SELECT id, surname FROM teacher
+WHERE surname = "Питошин";
+
+
+SELECT l.*, web_teacher.*
+FROM lesson l
+JOIN (SELECT id, surname FROM teacher
+WHERE surname = "Питошин") AS web_teacher
+ON web_teacher.id=l.teacher_id;
+
+SELECT * FROM teacher
+WHERE id IN(1,3);
+
+SELECT * FROM teacher
+WHERE EXISTS (SELECT * FROM lesson 
+WHERE teacher.id = lesson.teacher_id);
+
+SELECT * FROM teacher
+WHERE NOT EXISTS (SELECT * FROM lesson 
+WHERE teacher.id = lesson.teacher_id);
+
+
+
 
 SELECT * FROM teacher
 WHERE EXISTS(SELECT * FROM lesson
@@ -84,12 +110,20 @@ JOIN teacher t
 ON t.id=l.teacher_id
 WHERE course = "Знакомство с веб-технологиями";
 
+SELECT t.* 
+FROM teacher t, lesson l
+WHERE t.id = l.teacher_id AND
+	l.course = "Знакомство с веб-технологиями";
+    
 SELECT t.*, web_lesson.*
 FROM teacher t
 JOIN
 (SELECT course, teacher_id
 FROM lesson WHERE course = "Знакомство с веб-технологиями") AS web_lesson
-ON t.id=web_lesson.teacher_id;
+ON t.id = web_lesson.teacher_id;
+
+
+
 
 SELECT t.*, l.*,
 (SELECT COUNT(*)
@@ -102,22 +136,11 @@ SELECT * FROM teacher
 UNION
 SELECT * FROM lesson;
 
-SELECT id FROM teacher
-UNION
-SELECT id FROM lesson;
 
 SELECT id FROM teacher
 UNION ALL
 SELECT id FROM lesson;
 
-/*
-1.	Получить список логинов пользователей и клиентов, удалив одинаковых клиентов и пользователей
-2.	Получить список логинов пользователей и клиентов. Дубликаты удалять не нужно
-3. Получить список логинов, которые являются и пользователями, и клиентами
-4. Вывести информацию о пользователях и клиентах мужского пола.
-5. Вывести декартово произведение всех значений двух таблиц.
-6. Получить все атрибуты левой и правой таблицы, с помощью JOIN и UNION одновременно в одном запросе(FULL JOIN)
-*/
 
 DROP TABLE IF EXISTS users;
 CREATE TABLE IF NOT EXISTS users
@@ -155,8 +178,9 @@ INSERT INTO clients (login, pass, male) VALUES ('alexander', '$2y$10$6SzbBCMENkl
  ('Tom', '$2y$20$6SzbBCNRNklStIgTqBKIluijJUnbeZ5WqIu4RJgkksnFZon5kH20y', 1),
 ('Masha', '$2y$20$6SzbBCNRNklStIgTqBKIluijJUnbeZ4wqIu4RJgkksnFZon5kH20y', 2),
  ('alex', '$2y$10$6SzbBCMENklStIgTqBKIluijJUnbeZ5WqIu4RJgkksnFZon5kH14y', 1);
- 
- -- 1 --
+
+
+-- 1 --
 SELECT * FROM users
 UNION
 SELECT * FROM clients;
@@ -171,6 +195,10 @@ SELECT login FROM users
 UNION
 SELECT login FROM clients;
 
+SELECT u.login, c.login
+FROM users u 
+JOIN clients c 
+ON u.login = c.login;
 -- 4 --
 SELECT * FROM users u
 WHERE male = 1
@@ -178,18 +206,34 @@ UNION ALL
 SELECT * FROM clients c
 WHERE male = 1;
 
+SELECT u.login, c.login
+FROM users u 
+JOIN clients c 
+ON u.login = c.login
+WHERE c.male = 1;
+
 -- 5 --
 SELECT * FROM users
 CROSS JOIN clients;
 
 -- 6 --
-SELECT * FROM users u
+SELECT * FROM users AS u
 LEFT JOIN clients c
 ON u.id = c.id
 UNION
 SELECT * FROM users u
 RIGHT JOIN clients c
 ON u.id = c.id;
+
+SELECT * FROM users AS u
+LEFT JOIN clients c
+ON u.id = c.id
+WHERE u.male = 1
+UNION
+SELECT * FROM users u
+RIGHT JOIN clients c
+ON u.id = c.id
+WHERE c.male = 1;
 
 SELECT * FROM teacher;
 
