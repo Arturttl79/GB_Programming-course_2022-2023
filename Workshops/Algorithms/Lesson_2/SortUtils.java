@@ -4,7 +4,7 @@ public class SortUtils {
     /* Сортировка выборкой */
 
     public static void directSort(int[] array) {
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length - 1; i++) {
             int saveIndex = i;
 
             for (int j = i + 1; j < array.length; j++) {
@@ -24,7 +24,8 @@ public class SortUtils {
     public static void quickSort(int[] array) {
         if (array == null)
             return;
-        quickSort(array, 0, array.length - 1);
+        else 
+            quickSort(array, 0, array.length - 1);
     }
 
     private static void quickSort(int[] array, int start, int end) {
