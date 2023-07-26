@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Program",
+            "request": "launch",
+            "mainClass": "ru.geekbrains.lesson4.Program",
+            "projectName": "lesson3"
+        },
+        {
+            "type": "java",
+            "name": "Program",
+            "request": "launch",
+            "mainClass": "Workshops.Algorithms.Lesson_3.src.main.java.ru.geekbrains.lesson4.Program",
+            "projectName": "GB_Programming-course_2022-2023_66b1c8a6"
+        },
+        {
+            "type": "java",
+            "name": "Program",
+            "request": "launch",
+            "mainClass": "Workshops.Algorithms.Lesson_3.Program",
+            "projectName": "GB_Programming-course_2022-2023_66b1c8a6"
+        },
+        {
+            "type": "java",
             "name": "Lesson_1",
             "request": "launch",
             "mainClass": "Workshops.Algorithms.Lesson_1",
