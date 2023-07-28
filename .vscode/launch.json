@@ -3,6 +3,62 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Workshops.Exceptions.Home.src.Main",
+            "projectName": "GB_Programming-course_2022-2023_66b1c8a6"
+        },
+        {
+            "type": "java",
+            "name": "HW",
+            "request": "launch",
+            "mainClass": "Workshops.Exceptions.HW",
+            "projectName": "GB_Programming-course_2022-2023_66b1c8a6"
+        },
+        {
+            "type": "java",
+            "name": "HW",
+            "request": "launch",
+            "mainClass": "Workshops.Exceptions.Lesson_1.HW",
+            "projectName": "GB_Programming-course_2022-2023_66b1c8a6"
+        },
+        {
+            "type": "java",
+            "name": "Program",
+            "request": "launch",
+            "mainClass": "Workshops.Algorithms.Lesson_2.Program",
+            "projectName": "GB_Programming-course_2022-2023_66b1c8a6"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Workshops.Exceptions.Lesson_1.Main",
+            "projectName": "GB_Programming-course_2022-2023_66b1c8a6"
+        },
+        {
+            "type": "java",
+            "name": "Task3",
+            "request": "launch",
+            "mainClass": "Workshops.Exceptions.Lesson_1.Task3",
+            "projectName": "GB_Programming-course_2022-2023_66b1c8a6"
+        },
+        {
+            "type": "java",
+            "name": "Printer",
+            "request": "launch",
+            "mainClass": "Workshops.Exceptions.Lesson_1.Printer",
+            "projectName": "GB_Programming-course_2022-2023_66b1c8a6"
+        },
+        {
+            "type": "java",
+            "name": "Program",
+            "request": "launch",
+            "mainClass": "ru.geekbrains.lesson4.Program",
+            "projectName": "lesson4"
+        },
+        {
+            "type": "java",
             "name": "Program",
             "request": "launch",
             "mainClass": "ru.geekbrains.lesson4.Program",
