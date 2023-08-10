@@ -19,18 +19,13 @@ public class Program {
         res = hashMap.put("+79005554438", "Дарья7");
         res = hashMap.put("+79005554439", "Дарья8");
 
+        System.out.println("Через переопределение метода toString:" + "\n" + hashMap);
 
-        res = hashMap.get("+79005554436");
-
-        hashMap.remove("+79005554438");
-
+        System.out.println("Через Comparable:");
         for (HashMap.Entity element : hashMap) {
             System.out.println(element.key + " - " + element.value);
         }
-
-    
-
-
+        
     }
 
 }
