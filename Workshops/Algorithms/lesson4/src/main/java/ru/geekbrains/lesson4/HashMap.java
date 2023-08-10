@@ -24,22 +24,6 @@ public class HashMap<K, V> implements Iterable<HashMap.Entity> {
             return index < buckets.length;
         }
 
-        // if (!hasNext()) {
-        // return null;
-        // } else {
-        // Bucket<K, V> bucket = buckets[index];
-        // Entity entity = new Entity();
-        // if (bucket != null) {
-        // Bucket.Node node = bucket.head;
-        // while (node != null) {
-        // entity = (Entity) node.value;
-        // node = node.next;
-        // }
-        // }
-        // index++;
-        // return entity;
-        // }
-
         @Override
         public Entity next() {
             if (!hasNext()) {
