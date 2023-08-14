@@ -1,4 +1,4 @@
-package ru.geekbrains.lesson4;
+package Workshops.Algorithms.Lesson_4.src.main.java.ru.geekbrains.lesson4;
 
 
 
@@ -29,5 +29,3 @@ public class Program {
     }
 
 }
-
-

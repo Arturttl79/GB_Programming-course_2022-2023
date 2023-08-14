@@ -1,6 +1,6 @@
 package Workshops.Exceptions.Lesson_2;
 
-import java.util.Arrays;
+// import java.util.Arrays;
 
 /**
  * Обработайте возможные исключительные ситуации. "Битые" значения
@@ -17,13 +17,14 @@ public class Task_2 {
                 { "2", "6" }
         };
 
-        String[][] arr0 = new String[][] {
+/*        String[][] arr0 = new String[][] {
                 { "1", "1", "1", "1", "1" },
                 { "1", "1", "1", "1", "1" },
                 { "1", "1", "1", "1", "1" },
                 { "1", "1", "1", "1", "1" },
                 { "1", "1", "1", "1", "1" }
         };
+*/
         System.out.println(sum2d(arr));
     //     String[][] arrNew = fillArray(arr);
     //     for (int i = 0; i < arrNew.length; i++) {
