@@ -1,0 +1,61 @@
+.main-color {
+  background-color: rgb(53, 50, 53);
+}
+
+.header {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)),
+    url("./images/image-01.png");
+  opacity: 0.95;
+  height: 25em !important;
+}
+
+
+.product-div {
+  width: 480px;
+  height: 384px;
+}
+
+.col-image-left {
+  background-image: url("./images/image-02.png");
+  height: 25em !important;
+  height: 150px;
+}
+
+.col-image-right {
+  background-image: url("./images/image-03.png");
+  height: 25em !important;
+}
+
+.lost-image {
+  background-image: url("./images/image-04.png");
+  height: 25em !important;
+  width: 720;
+}
+
+.btn:hover {
+  text-decoration: none;
+  background-color: #bcc6cb;
+  ;
+}
+
+.checkout-img {
+  height: 390px;
+  width: 250px;
+}
+
+.small-img-admin {
+  height: 265px;
+  width: 170px;
+}
+
+.small-img-history {
+  height: 265px;
+  width: 170px;
+}
+
+.button-icon-admin {
+  width: 40px;
+  height: 40px;
+  fill: rgba(0, 0, 0, 0.7)
+}
