@@ -1,53 +1,22 @@
-.header {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)),
-    url("./Images/ImageDecor/image-00.png");
-  opacity: 0.95;
-  height: 25em !important;
+.App {
+  text-align: center;
+  /* background-color: #1c6a76; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: center; */
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
-.carousel-img {
-  height: 230px;
-  width: 150px;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  filter: invert(0)
-}
-
-.book-div {
-  width: 480px;
-  height: 384px;
-}
-
-.col-image-left {
-  background-image: url("./Images/ImageDecor/image-01.png");
-  height: 25em !important;
-  height: 150px;
-}
-
-.col-image-right {
-  background-image: url("./Images/ImageDecor/image-02.png");
-  height: 25em !important;
-}
-
-.homepage-carousel-title {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
-
-.lost-image {
-  background-image: url("./Images/ImageDecor/image-03.png");
-  height: 25em !important;
-  width: 720;
-}
-
-.btn:hover {
+a {
+  color: rgb(233, 233, 233);
   text-decoration: none;
-  background-color: #035981;
-  ;
+}
+
+a:hover {
+  color: rgb(128, 128, 108);
 }
 
 .main-color {
