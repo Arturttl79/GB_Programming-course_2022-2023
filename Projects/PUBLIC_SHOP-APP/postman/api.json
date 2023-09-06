@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "858d7cd6-ec90-4a27-964f-3b3a5d1b5256",
+		"_postman_id": "98b00913-4b86-401e-8606-335e7812a673",
 		"name": "Shop App",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "17367059"
@@ -18,6 +18,152 @@
 					],
 					"path": [
 						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/api/products",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/api/products/1",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/api/products/1",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products by id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \title\": \"Продукт 123\",\n    \"creator\": \"Создатель 1\",\n    \"description\": \"Описание 1\",\n    \"copies\": 5,\n    \"copiesAvailable\": 5,\n    \"category\": \"category_11\",\n    \"img\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{HOST}}/api/products/2",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "append products",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Продукт 77\",\n    \"creator\": \"Создатель 7\",\n    \"description\": \"Описание 7\",\n    \"copies\": 10,\n    \"copiesAvailable\": 10,\n    \"category\": \"category_1\"\n}"
+				},
+				"url": {
+					"raw": "{{HOST}}/api/products",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all products page size",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/api/products?page=1&size=2",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "2"
+						}
 					]
 				}
 			},
