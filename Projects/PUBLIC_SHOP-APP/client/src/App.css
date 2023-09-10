@@ -53,3 +53,8 @@
 .main-color {
   background-color: rgb(53, 50, 53);
 }
+
+.checkout-img {
+  height: 390px;
+  width: 250px;
+}

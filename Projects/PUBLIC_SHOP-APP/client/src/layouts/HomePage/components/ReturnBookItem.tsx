@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Book from "../../../models/Book";
 
 interface Props {
@@ -23,7 +24,12 @@ function ReturnBookItem({ book }: Props) {
         }
         <h6>{book.title}</h6>
         <p>{book.creator}</p>
-        <a className="btn main-color text-white" href="/">Подробнее</a>
+        <Link
+          className="btn main-color text-white"
+          to={`/checkout/${book.id}`}
+        >
+          Подробнее
+        </Link>
       </div>
     </div>
   );
