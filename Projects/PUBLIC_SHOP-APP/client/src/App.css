@@ -23,7 +23,7 @@
 
 .col-image-left {
   background-image: url("./Images/ImageDecor/image-01.png");
-  height: 25 em !important;
+  height: 25em !important;
   height: 150px;
 }
 
@@ -40,7 +40,7 @@
 
 .lost-image {
   background-image: url("./Images/ImageDecor/image-03.png");
-  height: 25 em !important;
+  height: 25em !important;
   width: 720;
 }
 

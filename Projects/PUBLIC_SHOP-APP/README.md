@@ -29,3 +29,10 @@
 
 App.css с заготовками
 - [тут](./files/App.css)
+
+## Библиотеки
+
+- Библиотека для роутинга[react-router-dom](https://www.npmjs.com/package/react-router-dom/v/5.0.0) -> `npm i react-router-dom@5.0.0` -> `npm i --save-dev @types/react-router-dom`
+
+### Иконки при необходимости
+- `npm i bootstrap-icons` | [url](https://icons.getbootstrap.com)

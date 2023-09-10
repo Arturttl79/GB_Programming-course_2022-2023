@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@types/react": "^18.2.21",
+    "bootstrap-icons": "^1.10.5",
+    "react-router-dom": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/react-router-dom": "^5.3.3"
+  }
+}
