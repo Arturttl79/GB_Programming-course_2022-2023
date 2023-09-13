@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "09233369-44c8-413d-9258-fd8308e162f2",
+		"_postman_id": "63a585db-2107-43d0-86ef-a36d69227ff1",
 		"name": "Shop App",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "17367059"
@@ -229,6 +229,125 @@
 						{
 							"key": "size",
 							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "host/api [products, reviews]",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/api",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all reviews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/api/reviews",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all reviews page size",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/api/reviews?page=0&size=2",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"reviews"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find reviews by product id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/api/reviews/search/findByProductId?productId=1",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"reviews",
+						"search",
+						"findByProductId"
+					],
+					"query": [
+						{
+							"key": "productId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find reviews by user email & product id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/api/reviews/search/findByUserEmailAndProductId?userEmail=user_1@ksergei.tech&productId=1",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"reviews",
+						"search",
+						"findByUserEmailAndProductId"
+					],
+					"query": [
+						{
+							"key": "userEmail",
+							"value": "user_1@ksergei.tech"
+						},
+						{
+							"key": "productId",
+							"value": "1"
 						}
 					]
 				}

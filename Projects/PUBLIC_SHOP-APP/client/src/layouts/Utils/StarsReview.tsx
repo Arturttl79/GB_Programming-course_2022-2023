@@ -12,7 +12,7 @@ function StarsReview(arg: Props) {
     let emptyStars = 0;
 
     if (rating !== undefined && rating > 0 && rating <= 5) {
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 5; i++) {
             if (rating - 1 >= 0) {
                 fillStars = fillStars + 1;
                 rating = rating - 1;

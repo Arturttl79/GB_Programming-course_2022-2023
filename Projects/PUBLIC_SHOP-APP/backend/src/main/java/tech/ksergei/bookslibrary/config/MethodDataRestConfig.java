@@ -7,6 +7,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 import tech.ksergei.bookslibrary.entity.Product;
+import tech.ksergei.bookslibrary.entity.Review;
 
 @Configuration
 public class MethodDataRestConfig implements RepositoryRestConfigurer {
@@ -25,8 +26,10 @@ public class MethodDataRestConfig implements RepositoryRestConfigurer {
     };
 
     config.exposeIdsFor(Product.class);
+    config.exposeIdsFor(Review.class);
 
     disableHttpMethods(Product.class, config, unsupportedActions);
+    disableHttpMethods(Review.class, config, unsupportedActions);
 
     cors.addMapping(config.getBasePath() + "/**")
         .allowedOrigins(clientUrl);

@@ -3,19 +3,23 @@ import Book from "../../models/Book";
 import SpinnerLoading from "../Utils/SpinnerLoading";
 import StarsReview from "../Utils/StarsReview";
 import CheckoutAndReviewBox from "./components/CheckoutAndReviewBox";
+import Review from "../../models/Review";
+import LatestReviews from "./components/LatestReviews";
 
 function BookCheckoutPage() {
     const [book, setBook] = useState<Book>();
     const [isLoading, setIsLoading] = useState<Boolean>(true);
     const [httpError, setHttpError] = useState<any>(null);
 
-    const bookId = (window.location.pathname).split("/")[2];
+    const [reviews, setReviews] = useState<Review[]>([])
+    const [totalStars, setTotalStars] = useState<number>(0);
+    const [isLoadingReview, setIsLoadingReview] = useState<boolean>(true);
 
-    let testRating = 3;
+    const productId = (window.location.pathname).split("/")[2];
 
     useEffect(() => {
         const fetchBook = async () => {
-            const url = `${process.env.REACT_APP_API_URL}/products/${bookId}`;
+            const url = `${process.env.REACT_APP_API_URL}/products/${productId}`;
 
             const response = await fetch(url);
 
@@ -42,9 +46,52 @@ function BookCheckoutPage() {
             setIsLoading(false);
             setHttpError(err.message)
         })
-    }, []);
+    }, [productId]);
 
-    if (isLoading) {
+    useEffect(() => {
+        const fetchBookReviews = async () => {
+            const reviewUrl: string = `${process.env.REACT_APP_API_URL}/reviews/search/findByProductId?productId=${productId}`;
+
+            const responseReviews = await fetch(reviewUrl);
+
+            if (!responseReviews.ok) {
+                throw new Error("Ошибка загрузки");
+            }
+
+            const responseJsonReviews = await responseReviews.json();
+            const responseData = responseJsonReviews._embedded.reviews;
+
+            const loadedReviews: Review[] = [];
+            let weightedStarReviews: number = 0;
+
+            for (const key in responseData) {
+                loadedReviews.push({
+                    id: responseData[key].id,
+                    userEmail: responseData[key].userEmail,
+                    date: responseData[key].date,
+                    rating: responseData[key].rating,
+                    productId: responseData[key].productId,
+                    reviewDescription: responseData[key].reviewDescription,
+                });
+                weightedStarReviews = weightedStarReviews + responseData[key].rating;
+            }
+
+            if (loadedReviews) {
+                const round = (Math.round((weightedStarReviews / loadedReviews.length) * 2) / 2).toFixed(1);
+                setTotalStars(Number(round));
+            }
+
+            setReviews(loadedReviews);
+            setIsLoadingReview(false);
+        };
+
+        fetchBookReviews().catch((error: any) => {
+            setIsLoadingReview(false);
+            setHttpError(error.message);
+        });
+    }, [productId]);
+
+    if (isLoading || isLoadingReview) {
         return (
             <SpinnerLoading />
         );
@@ -83,7 +130,7 @@ function BookCheckoutPage() {
                             <h5 className="text-primary">{book?.creator}</h5>
                             <p className="lead">{book?.description}</p>
                             <StarsReview
-                                rating={testRating}
+                                rating={totalStars}
                             />
                         </div>
                     </div>
@@ -92,6 +139,13 @@ function BookCheckoutPage() {
                         mobile={false}
                     />
                 </div>
+                <hr />
+                <LatestReviews
+                    productId={book?.id}
+                    mobile={false}
+                    reviews={reviews}
+                    key={book?.id}
+                />
             </div>
 
             <div className="container d-lg-none mt-5">
@@ -116,7 +170,7 @@ function BookCheckoutPage() {
                         <h5 className="text-primary">{book?.creator}</h5>
                         <p className="lead">{book?.description}</p>
                         <StarsReview
-                            rating={testRating}
+                            rating={totalStars}
                         />
                     </div>
                 </div>
@@ -124,8 +178,14 @@ function BookCheckoutPage() {
                     book={book}
                     mobile={true}
                 />
+                <hr />
+                <LatestReviews
+                    productId={book?.id}
+                    mobile={true}
+                    reviews={reviews}
+                    key={book?.id}
+                />
             </div>
-            <hr />
         </div>
     );
 }
