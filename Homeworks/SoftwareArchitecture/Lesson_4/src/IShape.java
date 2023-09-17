@@ -5,4 +5,7 @@ public interface IShape {
 
     // Периметр фигуры
     double getPerimeter();
+    
+    // Имя фигуры
+    String getName();
 }

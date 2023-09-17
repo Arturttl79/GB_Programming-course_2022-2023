@@ -1,8 +1,10 @@
 public class Circle implements IShape {
     private double radius;
+    private String name;
 
-    public Circle(double radius) {
+    public Circle(double radius, String name) {
         this.radius = radius;
+        this.name = name;
     }
 
     @Override
@@ -14,6 +16,11 @@ public class Circle implements IShape {
     public double getPerimeter() {
         return 2 * Math.PI * radius;
     }
+    
+    @Override
+    public String getName() {
+        return name;
+    }
 
     public double getRadius() {
         return radius;
@@ -21,5 +28,9 @@ public class Circle implements IShape {
 
     public void setRadius(double radius) {
         this.radius = radius;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
