@@ -4,7 +4,7 @@ import NavigationBar from './layouts/NavigationAndFooter/NavigationBar';
 import HomePage from './layouts/HomePage/HomePage';
 import Footer from './layouts/NavigationAndFooter/Footer';
 import SearchBooksPage from './layouts/SearchBookPage/SearchBookPage';
-import { Redirect, Route, Switch, useNavigate } from 'react-router-dom';
+import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import BookCheckoutPage from './layouts/BookCheckoutPage/BookCheckoutPage';
 import { OktaAuth, toRelativeUrl } from '@okta/okta-auth-js';
 import { LoginCallback, Security } from '@okta/okta-react';
@@ -16,13 +16,13 @@ const oktaAuth = new OktaAuth(oktaConfig);
 function App() {
 
   const customAuthHandler = () => {
-    navigate('/login');
+    history.push('/login');
   }
 
-  const navigate = useNavigate();
+  const history = useHistory();
 
   const restoreOriginalUri = async (_oktaAuth: any, originalUri: any) => {
-    navigate(toRelativeUrl(originalUri || '/', window.location.origin), { replace: true });
+    history.replace(toRelativeUrl(originalUri || '/', window.location.origin));
   };
 
 
