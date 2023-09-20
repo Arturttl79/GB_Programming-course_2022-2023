@@ -58,3 +58,21 @@ SELECT * FROM `shop_db`.`review`;
 
 SELECT * FROM `shop_db`.`review`
 WHERE `shop_db`.`review`.`product_id` = 1;
+
+
+DROP TABLE IF EXISTS `product_order`;
+CREATE TABLE IF NOT EXISTS `product_order` (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `user_email` varchar(45) DEFAULT NULL,
+  `order_date` varchar(45) DEFAULT NULL,
+  `return_date` varchar(45) DEFAULT NULL,
+  `product_id` BIGINT(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB auto_increment=1 default charset=utf8mb3;
+
+SELECT * FROM `shop_db`.`product_order`;
+
+SELECT * FROM `shop_db`.`product_order`
+WHERE `shop_db`.`product_order`.user_email='user_1@ksergei.tech'
+       AND `shop_db`.`product_order`.product_id = 1;
+       
