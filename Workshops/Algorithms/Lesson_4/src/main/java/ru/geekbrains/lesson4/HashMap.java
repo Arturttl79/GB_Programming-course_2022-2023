@@ -1,4 +1,4 @@
-package Workshops.Algorithms.Lesson_4.src.main.java.ru.geekbrains.lesson4;
+package ru.geekbrains.lesson4;
 
 import java.util.Iterator;
 
